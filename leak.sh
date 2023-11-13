@@ -9,5 +9,5 @@ for step in {1..20}; do
     for i in {0..9}; do
         ros2 param set /leaky_node${i} my_parameter ${payload} >/dev/null &
     done
-    sleep 1
+    sleep 5
 done
