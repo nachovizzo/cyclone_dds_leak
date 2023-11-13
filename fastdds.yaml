@@ -5,7 +5,7 @@ windows:
   - experiment:
       layout: tiled
       panes:
-        - ros2 run leaky_node leaky_node
+        - ros2 run leaky_node tf2_leaky_node
         - sleep 2 && python3 ./memreport.py --filename fastdds.csv
         - sleep 3 && tail -f fastdds.csv
         - sleep 3 && bash ./leak.sh && tmux kill-session -t fastdds_test
