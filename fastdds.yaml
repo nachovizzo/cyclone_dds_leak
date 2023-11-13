@@ -1,4 +1,4 @@
-name: cyclonedds_test
+name: fastdds_test
 startup_window: experiment
 pre_window: source ./install/setup.zsh
 windows:
@@ -6,9 +6,9 @@ windows:
       layout: even-vertical
       panes:
         - ros2 run leaky_node leaky_node
-        - sleep 2 && python3 ./memreport.py --filename cyclonedds.csv
-        - sleep 2 && tail -f cyclonedds.csv
-        - sleep 3 && bash ./leak.sh && tmux kill-session -t cyclonedds_test
+        - sleep 2 && python3 ./memreport.py --filename fastdds.csv
+        - sleep 2 && tail -f fastdds.csv
+        - sleep 3 && bash ./leak.sh && tmux kill-session -t fastdds_test
   - htop:
       panes:
         - htop --filter=leaky_node
