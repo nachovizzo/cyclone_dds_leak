@@ -12,4 +12,12 @@ Run the experiments, come with `tmux` session to see what's going on, wait and s
 
 ```
 bash ./run_experiment.sh
-``
+```
+
+
+## Related Issues
+
+- https://github.com/ros2/geometry2/pull/630
+- https://github.com/ros2/rmw_cyclonedds/issues/471
+- https://github.com/ksuszka/cyclonedds_iceoryx_memory_leak
+
