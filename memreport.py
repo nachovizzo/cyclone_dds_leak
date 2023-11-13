@@ -1,4 +1,5 @@
 # Copyright Dexory 2023 (c)
+import argparse
 import time
 from typing import Dict
 
@@ -19,8 +20,9 @@ def get_memory_usage(pname="leaky_node") -> float:
     return memory_rss
 
 
-if __name__ == "__main__":
-    name = "leaky_node"
+def main(filename, name, duration):
+    # Your script logic here
+    print(f"Processing file: {filename}")
     filename = "results.csv"
     sleep_for = 1.0  # seconds
     print(
@@ -36,4 +38,36 @@ if __name__ == "__main__":
         print(f"{memory_usage:.4f},", file=f, end="")
         print("", file=f)
         f.close()
-        time.sleep(sleep_for)
+        time.sleep(duration)
+
+
+if __name__ == "__main__":
+    parser = argparse.ArgumentParser(
+        description="Simple script to log memory consumption based on process name",
+    )
+    parser.add_argument(
+        "-f",
+        "--filename",
+        default="results.csv",
+        help="Specify the input filename",
+    )
+    parser.add_argument(
+        "-d",
+        "--duration",
+        type=int,
+        default=1,
+        help="Time rate to control how fast we log (in seconds)",
+    )
+    parser.add_argument(
+        "-p",
+        "--process_name",
+        default="leaky_node",
+        help="Specify the process name to log",
+    )
+
+    args = parser.parse_args()
+    main(
+        args.filename,
+        args.process_name,
+        args.duration,
+    )
