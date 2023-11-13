@@ -3,7 +3,7 @@ startup_window: experiment
 pre_window: source ./install/setup.zsh
 windows:
   - experiment:
-      layout: even-vertical
+      layout: tiled
       panes:
         - ros2 run leaky_node leaky_node
         - sleep 2 && python3 ./memreport.py --filename cyclonedds.csv
