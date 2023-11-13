@@ -1,0 +1,14 @@
+name: cyclonedds_test
+startup_window: record
+pre_window: source ./install/setup.bash
+windows:
+  - experiment:
+      layout: even-vertical
+      panes:
+        - ros2 run leaky_node leaky_node
+        - sleep 2 && python3 ./memreport.py --filename cyclone_dds.csv
+        - sleep 2 && tail -f cyclone_dds.csv
+        - sleep 3 && bash ./leak.sh
+  - htop:
+      panes:
+        - htop --filter=leaky_node
