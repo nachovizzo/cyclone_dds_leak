@@ -1,6 +1,6 @@
 name: cyclonedds_test
-startup_window: record
-pre_window: source ./install/setup.bash
+startup_window: experiment
+pre_window: source ./install/setup.zsh
 windows:
   - experiment:
       layout: even-vertical

@@ -23,7 +23,6 @@ def get_memory_usage(pname="leaky_node") -> float:
 def main(filename, name, duration):
     # Your script logic here
     print(f"Processing file: {filename}")
-    filename = "results.csv"
     sleep_for = 1.0  # seconds
     print(
         f"Logging memory consumption of pid: {name} to: {filename} every {sleep_for} seconds..."
