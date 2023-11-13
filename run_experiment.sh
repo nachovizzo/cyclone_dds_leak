@@ -2,7 +2,7 @@
 
 # build just in case :)
 # cleanup, sorry!
-rm *.csv
+rm *.csv 2>/dev/null
 
 # build just in case :)
 colcon build
