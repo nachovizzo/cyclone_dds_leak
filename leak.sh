@@ -4,10 +4,10 @@
 # a big string
 payload=$(printf 'X%.0s' {1..100000})
 
-for step in {1..20}; do
+for step in {1..100}; do
     echo "Leaking step $step ..."
     for i in {0..9}; do
         ros2 param set /leaky_node${i} my_parameter ${payload} >/dev/null &
     done
-    sleep 5
+    sleep 2
 done

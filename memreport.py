@@ -53,8 +53,8 @@ if __name__ == "__main__":
     parser.add_argument(
         "-d",
         "--duration",
-        type=int,
-        default=1,
+        type=float,
+        default=0.5,
         help="Time rate to control how fast we log (in seconds)",
     )
     parser.add_argument(
