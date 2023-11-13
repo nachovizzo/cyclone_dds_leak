@@ -3,18 +3,19 @@ import numpy as np
 
 
 def main():
-    # Extract the column you want to plot
     cyclonedds = np.genfromtxt("cyclonedds.csv", delimiter=",")
-    fastdds = np.genfromtxt("fastdds.csv", delimiter=",")
-
-    # Plot the data
+    plt.figure("Cyclone DDS")
     plt.plot(cyclonedds)
-    plt.plot(fastdds)
+    plt.xlabel("time")
+    plt.title("CycloneDDS")
+    plt.ylabel("memory usage in MiB")
 
-    # Add labels and title
+    plt.figure("FastDDS")
+    fastdds = np.genfromtxt("fastdds.csv", delimiter=",")
     plt.xlabel("time")
     plt.ylabel("memory usage in MiB")
-    plt.legend()
+    plt.title("FastDDS")
+    plt.plot(fastdds)
     plt.show()
 
 
