@@ -1,7 +1,7 @@
 #!/bin/bash
 
-# NODE=tf2_leaky_node
-export NODE=leaky_node
+export NODE=tf2_leaky_node
+# export NODE=leaky_node
 
 # build just in case :)
 # cleanup, sorry!
