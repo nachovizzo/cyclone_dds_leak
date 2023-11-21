@@ -1,12 +1,11 @@
 # Copyright Dexory 2023 (c)
 import argparse
 import time
-from typing import Dict
 
 import psutil
 
 
-def get_memory_usage(pname="leaky_node") -> float:
+def get_memory_usage(pname="tf2_leaky_node") -> float:
     memory_rss = 0.0
     __bytes_to_mbytes = 1 / (1024 * 1024)
     for process in psutil.process_iter(["name", "memory_info"]):
